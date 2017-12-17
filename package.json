@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/Miciaha/mltwitterbot/issues"
   },
-  "homepage": "https://github.com/Miciaha/mltwitterbot#readme"
+  "homepage": "https://github.com/Miciaha/mltwitterbot#readme",
+  "dependencies": {
+    "redis": "^2.8.0",
+    "twit": "^2.2.9"
+  },
+  "scripts":{
+    "start": "node main.js"
+  }
 }
