@@ -1,0 +1,24 @@
+{
+  "name": "mltwitterbot",
+  "version": "1.0.0",
+  "description": "A bot for twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miciaha/mltwitterbot.git"
+  },
+  "keywords": [
+    "machinelearning",
+    "git",
+    "twitter"
+  ],
+  "author": "Miciaha Ivey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Miciaha/mltwitterbot/issues"
+  },
+  "homepage": "https://github.com/Miciaha/mltwitterbot#readme"
+}
