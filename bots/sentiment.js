@@ -7,9 +7,9 @@ const config = require("./config");
 const bot = new Twit(config);
 var url = require("url");
 var redisURL = url.parse(process.env.REDISCLOUD_URL || 'redis://rediscloud:62WwEPziRxb2ooXy@redis-13077.c12.us-east-1-4.ec2.cloud.redislabs.com:13077');
-var client = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
+var client = redis.createClient(process.env.REDISCLOUD_URL);
 if (process.env.REDISCLOUD_URL){
-    client.auth(redisURL.auth.split(":"[1]));
+    client.auth.split(":"[1]);
 }
 
 var REDIS_KEY = 'repliedTo';
