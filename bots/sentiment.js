@@ -6,7 +6,7 @@ const config = require("./config");
 
 const bot = new Twit(config);
 var url = require("url");
-var redisURL = url.parse(process.env.REDISCLOUD_URL || 'redis://127.0.0.1:6379');
+var redisURL = url.parse(process.env.REDISCLOUD_URL || 'redis://rediscloud:62WwEPziRxb2ooXy@redis-13077.c12.us-east-1-4.ec2.cloud.redislabs.com:13077');
 var client = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
 if (process.env.REDISCLOUD_URL){
     client.auth(redisURL.auth.split(":"[1]));
