@@ -23,7 +23,8 @@
   "homepage": "https://github.com/Miciaha/mltwitterbot#readme",
   "dependencies": {
     "redis": "^2.8.0",
-    "twit": "^2.2.9"
+    "twit": "^2.2.9",
+    "sentiment":"^4.1.0"
   },
   "scripts":{
     "start": "node main.js"
