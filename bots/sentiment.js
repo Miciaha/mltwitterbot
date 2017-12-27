@@ -31,7 +31,7 @@ function processTweet(tweet){
                     break;
                 
                 default:
-                    var message = " You're nice enough for me " + tweet.user.name[0] + ". Let's be buds :)"
+                    var message = " You're nice enough for me " + tweet.user.name + ". Let's be buds :)"
             }
             
             replyTo(tweet, message);
