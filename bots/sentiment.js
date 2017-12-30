@@ -13,21 +13,24 @@ var REDIS_KEY = 'repliedTo';
 //Analyze sentiment
 function processTweet(tweet){
     client.sadd(REDIS_KEY, tweet.user.id_str, function(err, reply){
+        
+        var username = tweet.user.name.split(' ')[0]
+        
         if (err){
             console.log(err);
         }  else {
             var naughtyOrNice = sentiment(tweet.text, {'@machineelsa':0}).score;
             switch(naughtyOrNice) {
                 case -5:
-                    var message = "! Wow, I really hope you don't kiss your mother with that mouth " + tweet.user.name + ". GOOD DAY, SIR!"
+                    var message = "! Wow, I really hope you don't kiss your mother with that mouth " + username + ". GOOD DAY, SIR!"
                     break;
                 
                 case -4,-3,-2,-1: 
-                    var message = " I don't have the ability to not take what you tweeted to heart just yet. I'll just say 'Ouch' for now."
+                    var message = " I don't have the ability to not take what you tweeted to heart just yet. I'll just say 'Ouch' for now " + username + "."
                     break;
                 
                 default:
-                    var message = " You're nice enough for me " + tweet.user.name + ". Let's be buds :)"
+                    var message = " You're nice enough for me " + username + ". Let's be buds :)"
             }
             
             replyTo(tweet, message);
