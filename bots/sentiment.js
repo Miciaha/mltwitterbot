@@ -2,7 +2,6 @@
 var redis = require('redis');
 var Twit = require("twit");
 var sentiment = require("sentiment");
-var scholar = require("google-scholar");
 const config = require("./config");
 
 const bot = new Twit(config);
@@ -42,8 +41,10 @@ function processTweet(tweet){
 }
 
 function getArticle(){
+    'use strict'
+    let scholar = require("google-scholar");
     scholar.search('machine learning').then(resultsObj => {
-    console.log(resultsObj) // this will have all ~112 results
+        console.log(resultsObj) // this will have all ~112 results
   })
 }
 
