@@ -1,4 +1,5 @@
-const logic = require("./logic.js");
+const senti = require("./sentiment.js");
 
 
-logic();
+
+senti();
