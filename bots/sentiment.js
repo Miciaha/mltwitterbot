@@ -2,6 +2,7 @@
 var redis = require('redis');
 var Twit = require("twit");
 var sentiment = require("sentiment");
+var scholar = require("google-scholar");
 const config = require("./config");
 
 const bot = new Twit(config);
@@ -23,6 +24,7 @@ function processTweet(tweet){
             switch(naughtyOrNice) {
                 case -5:
                     var message = "! Wow, I really hope you don't kiss your mother with that mouth " + username + ". GOOD DAY, SIR!"
+                    getArticle();
                     break;
                 
                 case -4,-3,-2,-1: 
@@ -30,12 +32,19 @@ function processTweet(tweet){
                     break;
                 
                 default:
-                    var message = " You're nice enough for me " + username + ". Let's be buds :)"
+                    var message = " You're nice enough for me " + username + ". Have an article on machine learning :)"
+                    getArticle();
             }
             
             replyTo(tweet, message);
         }
     });
+}
+
+function getArticle(){
+    scholar.search('machine learning').then(resultsObj => {
+    console.log(resultsObj) // this will have all ~112 results
+  })
 }
 
 function replyTo(tweet, message){
@@ -51,7 +60,7 @@ var stream = bot.stream('statuses/filter', {track: '@MachineElsa'});
 
 const senti = () =>{
     stream.on('tweet', function(tweet){
-        //console.log(tweet);
+        console.log(tweet);
         processTweet(tweet);
     });
     

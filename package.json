@@ -4,7 +4,7 @@
   "description": "A bot for twitter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,9 @@
   },
   "homepage": "https://github.com/Miciaha/mltwitterbot#readme",
   "dependencies": {
+    "google-scholar": "^1.5.1",
     "redis": "^2.8.0",
-    "twit": "^2.2.9",
-    "sentiment":"^4.1.0"
-  },
-  "scripts":{
-    "start": "node main.js"
+    "sentiment": "^4.1.0",
+    "twit": "^2.2.9"
   }
 }
