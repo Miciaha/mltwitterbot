@@ -60,7 +60,7 @@ var stream = bot.stream('statuses/filter', {track: '@MachineElsa'});
 
 const senti = () =>{
     stream.on('tweet', function(tweet){
-        console.log(tweet);
+        //console.log(tweet);
         processTweet(tweet);
     });
     
